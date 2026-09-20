@@ -9,8 +9,8 @@
 
 const WEDDING = {
   couple: {
-    groom: "Mohamed",
-    bride: "Sara",
+    groom: "Abdelrahman",
+    bride: "Menna",
   },
   music: {
     file: "assets/wedding-music.mp3",
@@ -18,12 +18,12 @@ const WEDDING = {
     autoplay: true,
   },
   date: {
-    day: "07",
+    day: "08",
     month: "OCTOBER",
     year: "2026",
-    dayName: "WEDNESDAY",
+    dayName: "Thursday",
     time: "7:00 PM",
-    countdown: "2026-10-07T19:00:00",
+    countdown: "2026-10-08T19:00:00",
   },
 
   ceremony: {
@@ -42,26 +42,27 @@ const WEDDING = {
   },
 
   location: {
-    venue: "Moon Plaza",
-    city: "Cairo, Egypt",
+    venue: "Grand Hayat Hall",
+    city: "Helwan, Cairo Governorate, Egypt",
 
-    mapsUrl: "https://maps.app.goo.gl/HNaeH6PTy4VDhjRR7?g_st=aw",
+    mapsUrl: "https://maps.app.goo.gl/4y2tpC6CAPcMr5GL6",
 
     embedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2219.2000747907473!2d31.265304199999996!3d29.948072999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145839006fee4cf7%3A0x5b486b1cc20e8593!2sMoon%20Plaza!5e1!3m2!1sen!2seg!4v1786610835431!5m2!1sen!2seg",
+    "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2221.641309219969!2d31.317358475545877!3d29.83849397502801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDUwJzE4LjYiTiAzMcKwMTknMTEuOCJF!5e1!3m2!1sen!2seg!4v1789921793672!5m2!1sen!2seg"
+     
   },
 
   gallery: [
     {
-      src: "assets/photo1.jpeg",
+      src: "assets/photo1.jpg",
       caption: "A beautiful beginning",
     },
     {
-      src: "assets/photo2.jpeg",
+      src: "assets/photo2.jpg",
       caption: "Moments together",
     },
     {
-      src: "assets/photo3.jpeg",
+      src: "assets/photo3.jpg",
       caption: "Forever memories",
     },
   ],
@@ -72,7 +73,7 @@ const WEDDING = {
     introduction:
       "Leave us a little piece of your heart and a beautiful memory to keep forever.",
 
-    greeting: "Dear Mohamed & Sara,",
+    greeting: "Dear Abdelrahman & Menna,",
 
     emptyMessage:
       "Leave us a beautiful message to make our guest book complete. ❤️",
@@ -876,7 +877,7 @@ if (rsvpForm) {
         throw new Error("Supabase is not configured.");
       }
 
-      const { error } = await supabaseClient.from("wedding_messages").insert({
+      const { error } = await supabaseClient.from("wedding_messagesss").insert({
         name: name,
 
         attendance: attendance,
@@ -1234,7 +1235,7 @@ async function loadGuestMessages() {
     }
 
     const { data, error } = await supabaseClient
-      .from("wedding_messages")
+      .from("wedding_messagesss")
       .select("id,name,attendance,guests,message,created_at")
       .order("created_at", {
         ascending: false,

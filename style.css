@@ -331,9 +331,10 @@ h2 {
 }
 #coupleNames {
   font:
-    400 clamp(72px, 11vw, 135px)/0.78 "Pinyon Script",
+    400 clamp(50px, 11vw, 100px)/0.78 "Pinyon Script",
     cursive;
   color: var(--script);
+  margin: 50px 0 10px;
 }
 #coupleNames .ampersand {
   display: block;
@@ -930,7 +931,7 @@ h2 {
   padding: 55px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
@@ -951,6 +952,9 @@ h2 {
     italic 22px/1.75 "Cormorant Garamond",
     serif;
   color: var(--text-light);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
 }
 .page-ornament {
   display: flex;
@@ -1244,7 +1248,7 @@ h2 {
     margin: 0;
     text-align: left;
     justify-content: flex-start;
-    padding: 18px 0 18px 55px;
+    padding: 18px 0 18px 70px;
   }
   .program-icon {
     position: absolute;
@@ -1262,8 +1266,8 @@ h2 {
     min-height: 300px;
   }
   .pocket-watch {
-    width: 330px;
-    height: 330px;
+    width: 300px;
+    height: 300px;
   }
   .watch-numbers {
     gap: 8px;
