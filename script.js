@@ -584,13 +584,13 @@ function applyWeddingData() {
 
   const coupleElements = document.querySelectorAll("[data-couple]");
 
-  const dayElements = document.querySelectorAll("[data-day]");
+  const dayElements = document.getElementById("heroDay");
 
   const monthElements = document.querySelectorAll("[data-month]");
 
   const yearElements = document.querySelectorAll("[data-year]");
 
-  const dayNameElements = document.querySelectorAll("[data-day-name]");
+  const dayNameElements = document.getElementById("heroDayName");
 
   const timeElements = document.querySelectorAll("[data-time]");
 
@@ -610,9 +610,8 @@ function applyWeddingData() {
     element.textContent = `${WEDDING.couple.groom} & ${WEDDING.couple.bride}`;
   });
 
-  dayElements.forEach(element => {
-    element.textContent = WEDDING.date.day;
-  });
+  dayElements.textContent = WEDDING.date.day;
+  
 
   monthElements.forEach(element => {
     element.textContent = WEDDING.date.month;
@@ -622,10 +621,8 @@ function applyWeddingData() {
     element.textContent = WEDDING.date.year;
   });
 
-  dayNameElements.forEach(element => {
-    element.textContent = WEDDING.date.dayName;
-  });
-
+  dayNameElements.textContent = WEDDING.date.dayName;
+  
   timeElements.forEach(element => {
     element.textContent = WEDDING.date.time;
   });
