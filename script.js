@@ -24,6 +24,7 @@ const WEDDING = {
     dayName: "Thursday",
     time: "7:00 PM",
     countdown: "2026-10-08T19:00:00",
+    bottomDate: "08 . 10 . 2026"
   },
 
   ceremony: {
@@ -701,6 +702,7 @@ const countdownHours = getElement("hours");
 const countdownMinutes = getElement("minutes");
 
 const countdownSeconds = getElement("seconds");
+const countdownSection = document.getElementById("watchDate");
 
 function updateCountdown() {
   const weddingDate = new Date(WEDDING.date.countdown).getTime();
@@ -726,6 +728,8 @@ function updateCountdown() {
       countdownSeconds.textContent = "00";
     }
 
+
+
     return;
   }
 
@@ -738,6 +742,7 @@ function updateCountdown() {
   const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 
   const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  countdownSection.textContent = WEDDING.date.bottomDate;
 
   if (countdownDays) {
     countdownDays.textContent = String(days).padStart(2, "0");
@@ -950,6 +955,7 @@ const totalPages = getElement("totalPages");
 const closeBookButton = getElement("closeBookButton");
 
 const bookCloseControl = getElement("bookCloseControl");
+const coverDate=document.getElementById("bookCoverDate").textContent = WEDDING.date.bottomDate
 
 /* =========================================================
    BOOK STATE
@@ -1445,6 +1451,13 @@ function loadGallery() {
     galleryContainer.appendChild(card);
   });
 }
+
+
+
+/* =========================================================
+   Footer
+========================================================= */
+const footerDate = document.getElementById("footerDate").textContent = WEDDING.date.bottomDate
 
 /* =========================================================
    MUSIC PLAYER
